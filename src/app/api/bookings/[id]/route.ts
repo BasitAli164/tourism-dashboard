@@ -17,7 +17,7 @@ export async function GET(request: Request, { params }: { params: { id: string }
     return NextResponse.json(booking);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch booking' },
+      { error: `Failed to fetch booking ${error}` },
       { status: 500 }
     );
   }
@@ -39,13 +39,13 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     return NextResponse.json(booking);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to update booking' },
+      { error: `Failed to update booking ${error}` },
       { status: 500 }
     );
   }
 }
 
-export async function DELETE(request: Request, { params }: { params: { id: string } }) {
+export async function DELETE( { params }: { params: { id: string } }) {
   try {
     await dbConnect();
     const booking = await bookingModel.findByIdAndDelete(params.id);
@@ -60,7 +60,7 @@ export async function DELETE(request: Request, { params }: { params: { id: strin
     return NextResponse.json({ message: 'Booking deleted successfully' });
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to delete booking' },
+      { error: `Failed to delete booking${error}` },
       { status: 500 }
     );
   }
