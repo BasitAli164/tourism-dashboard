@@ -2,7 +2,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import dbConnect from "@/utils/dbConnectionHandlers";
-import supportTicketModel from "@/models/userModels/support.model";
+import supportTicketModel from "@/models/support.model";
 
 export async function POST(req: NextRequest) {
   await dbConnect();

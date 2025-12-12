@@ -1,7 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getServerSession } from 'next-auth';
 import { authOption } from '../../auth/[...nextauth]/option';
-import multerUpload from '@/utils/multer';
 import dbConnect from '@/utils/dbConnectionHandlers';
 import AdminModel from '@/models/admin.model';
 import { writeFile } from 'fs/promises';
