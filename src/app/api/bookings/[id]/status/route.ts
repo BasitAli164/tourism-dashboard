@@ -30,7 +30,7 @@ export async function PUT(request: Request, { params }: { params: { id: string }
     return NextResponse.json(booking);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to update booking status' },
+      { error: `Failed to update booking status${error}` },
       { status: 500 }
     );
   }

@@ -27,7 +27,7 @@ export const PATCH = async (
     return NextResponse.json(updatedInquiry);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to assign agent' },
+      { error: `Failed to assign agent${error}` },
       { status: 500 }
     );
   }

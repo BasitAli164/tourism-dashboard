@@ -38,7 +38,7 @@ export const PATCH = async (
     return NextResponse.json(updatedInquiry);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to update status' },
+      { error: `Failed to update status ${error}` },
       { status: 500 }
     );
   }

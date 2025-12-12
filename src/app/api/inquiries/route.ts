@@ -26,7 +26,7 @@ export const GET = async () => {
     return NextResponse.json(formattedInquiries);
   } catch (error) {
     return NextResponse.json(
-      { error: 'Failed to fetch inquiries' },
+      { error: `Failed to fetch inquiries ${error}` },
       { status: 500 }
     );
   }

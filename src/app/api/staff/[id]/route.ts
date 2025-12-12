@@ -34,7 +34,7 @@ export async function GET(
     });
   } catch (error) {
     return NextResponse.json(
-      { success: false, message: 'Error fetching staff' },
+      { success: false, message: `Error fetching staff ${error}` },
       { status: 500 }
     );
   }
@@ -112,7 +112,7 @@ export async function DELETE(
     });
   } catch (error) {
     return NextResponse.json(
-      { success: false, message: 'Error deleting staff' },
+      { success: false, message: `Error deleting staff ${error}` },
       { status: 500 }
     );
   }
